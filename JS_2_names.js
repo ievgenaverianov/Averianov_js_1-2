@@ -1,21 +1,23 @@
-var arrUserNames = [];
+var aUserNames = [];
 
 for (var i = 0; i < 5 ; i++) {
-  arrUserNames[i] = prompt('Введите имя пользователя');
+  aUserNames[i] = prompt('Введите ' + (i + 1) + 'е имя пользователя');
 }
 
-var myName = prompt('Введите Ваше имя');
+var sMyName = prompt('Введите Ваше имя');
 
-var matchNames = 0;
+var bMatchNames = false;
 
-for (var i = 0; i < arrUserNames.length; i++) {
-  if (myName === arrUserNames[i]) {
-    matchNames += 1;
+//searching for sMyName (single user name) in aUserNames (array of allowed users)
+for (i = 0; i < aUserNames.length; i++) {
+  if (sMyName === aUserNames[i]) {
+    bMatchNames = true;
+    break;
   }
 }
 
-if (matchNames == 1) {
-  alert(myName + ', вы успешно вошли');
+if (bMatchNames) {
+  alert(sMyName + ', вы успешно вошли');
 } else {
   alert('Указанного имени нет в списке ');
 }
